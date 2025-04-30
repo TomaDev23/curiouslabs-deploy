@@ -1,16 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer_legacy';
 
 export default function OpsPipe() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1A1A2E] via-[#16213E] to-[#0F172A] text-white">
+      <Helmet>
+        <title>OpsPipe - Operational Workflow | CuriousLabs</title>
+        <meta name="description" content="Streamline your operational workflow with real-time monitoring and intelligent automation. Built with flexibility for enterprise-grade efficiency." />
+        <meta property="og:title" content="OpsPipe - Operational Workflow | CuriousLabs" />
+        <meta property="og:description" content="Streamline your operational workflow with real-time monitoring and intelligent automation. Built with flexibility for enterprise-grade efficiency." />
+        <meta property="og:image" content="/images/logo.svg" />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content="https://curiouslabs.io/products/opspipe" />
+      </Helmet>
+      
       <NavBar />
       
       <main className="container mx-auto px-4 py-16 max-w-6xl">
-        {/* Hero Section */}
-        <section className="mb-24 text-center">
+        {/* Hero Section with anchor ID */}
+        <section id="overview" className="mb-24 text-center">
           <div className="inline-block mb-4 p-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500">
             <div className="bg-[#1A1A2E] rounded-full p-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -79,70 +90,46 @@ export default function OpsPipe() {
           </div>
         </section>
         
-        {/* Features Section */}
+        {/* Features Section with anchor ID */}
         <section id="features" className="mb-24">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Key Features</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Seamless Integration',
-                description: 'Connect with your existing tools and services through our extensive library of connectors and APIs',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                ),
+                title: 'Real-Time Monitoring',
+                description: 'Watch task states, inputs, and output flows as they execute.',
+                icon: '🚨'
               },
               {
-                title: 'Intelligent Monitoring',
-                description: 'Track system performance in real-time with customizable dashboards and proactive alerts',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                ),
+                title: 'Intelligent Automation',
+                description: 'Define workflows that adapt based on signal or feedback.',
+                icon: '🔁'
               },
               {
-                title: 'Automated Workflows',
-                description: 'Create custom automation sequences that trigger based on events or schedules to reduce manual work',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
-                ),
+                title: 'CLI + Telegram Interface',
+                description: 'Ingest documents or triggers via terminal or bot UI.',
+                icon: '🧪'
               },
               {
-                title: 'Scalable Architecture',
-                description: 'Built to handle enterprise workloads while maintaining performance and reliability',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                ),
+                title: 'Custom Error Handling',
+                description: 'Route failures into fallback states powered by Aegis.',
+                icon: '🛠️'
               },
               {
-                title: 'Comprehensive Analytics',
-                description: 'Gain insights from operational data with advanced analytics and visualizations',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                ),
+                title: 'Output & Export Pipeline',
+                description: 'Push to webhooks, dashboards, accounting tools, or folders.',
+                icon: '📦'
               },
               {
-                title: 'Enterprise Security',
-                description: 'Built with security in mind, featuring role-based access control and encrypted data transmission',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                ),
+                title: 'Hardened Trace System',
+                description: 'Every action traceable, testable, and auditable.',
+                icon: '🔐'
               },
             ].map((feature, index) => (
               <div key={index} className="bg-blue-900/10 p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-colors duration-300">
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center mb-4">
-                  {feature.icon}
+                  <span className="text-2xl">{feature.icon}</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                 <p className="text-gray-400">{feature.description}</p>
@@ -151,8 +138,8 @@ export default function OpsPipe() {
           </div>
         </section>
         
-        {/* CTA Section */}
-        <section className="mb-20">
+        {/* CTA Section with anchor ID */}
+        <section id="cta" className="mb-20">
           <div className="bg-gradient-to-r from-blue-900/30 to-cyan-900/20 rounded-2xl p-10 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Operations?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">

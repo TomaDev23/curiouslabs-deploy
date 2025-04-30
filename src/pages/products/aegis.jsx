@@ -22,7 +22,8 @@ export default function Aegis() {
       <NavBar />
       
       <main className="pt-20 sm:pt-24 pb-12 sm:pb-16">
-        <section className="max-w-7xl mx-auto px-4 py-10 sm:py-16 text-center">
+        {/* Overview Section with anchor ID */}
+        <section id="overview" className="max-w-7xl mx-auto px-4 py-10 sm:py-16 text-center">
           <div className="inline-block mb-4 sm:mb-6">
             <div className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4">
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-md opacity-50"></div>
@@ -80,38 +81,45 @@ export default function Aegis() {
           </div>
         </section>
         
-        {/* Features */}
-        <section className="max-w-7xl mx-auto px-4 py-6 sm:py-8 mb-12 sm:mb-16">
+        {/* Features Section with anchor ID */}
+        <section id="features" className="max-w-7xl mx-auto px-4 py-6 sm:py-8 mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 text-center">Core Capabilities</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                title: 'Intelligent Decision Making',
-                description: 'Advanced algorithms process data and make optimal decisions in real-time',
+                title: 'Decision Graph',
+                description: 'Uses state graphs to model runtime decisions and fallback chains.',
+                icon: '🧠'
               },
               {
-                title: 'Seamless Integration',
-                description: 'Connect with any system through our extensive API and connector library',
+                title: 'Agent Orchestration',
+                description: 'Powers AI modules like GPT, Claude, Gemini, Grok in unified logic.',
+                icon: '⚙️'
               },
               {
-                title: 'Scalable Architecture',
-                description: 'Handles enterprise-level workloads with consistent performance',
+                title: 'Signal Integration',
+                description: 'Accepts inbound data from tools like MoonSignal and OpsPipe.',
+                icon: '📡'
               },
               {
-                title: 'Predictive Analytics',
-                description: 'Machine learning models anticipate needs and optimize processes',
+                title: 'Contract Enforcement',
+                description: 'Validates transitions and actions with declarative schemas.',
+                icon: '🔒'
               },
               {
-                title: 'Secure Operations',
-                description: 'Enterprise-grade security with encryption and access controls',
+                title: 'Memory & Telemetry',
+                description: 'Tracks every state, transition, and variable at runtime.',
+                icon: '🔄'
               },
               {
-                title: 'Customizable Workflows',
-                description: 'Tailor processes to your specific business requirements',
+                title: 'Modular Output Hooks',
+                description: 'Powers downstream rendering, sync, or routing to other tools.',
+                icon: '🔌'
               },
             ].map((feature, index) => (
               <div key={index} className="bg-gradient-to-br from-[#2A2A45]/50 to-[#1A1A30]/50 p-5 sm:p-6 rounded-xl border border-yellow-500/10 hover:border-yellow-500/30 transition duration-300">
+                <div className="text-2xl mb-3">{feature.icon}</div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">{feature.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-400">{feature.description}</p>
               </div>
@@ -119,8 +127,8 @@ export default function Aegis() {
           </div>
         </section>
         
-        {/* Call to Action */}
-        <section className="max-w-5xl mx-auto px-4 py-10 sm:py-16 text-center">
+        {/* Call to Action Section with anchor ID */}
+        <section id="cta" className="max-w-5xl mx-auto px-4 py-10 sm:py-16 text-center">
           <div className="bg-gradient-to-r from-yellow-900/30 to-orange-900/20 rounded-2xl p-6 sm:p-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Ready to Power Your Business?</h2>
             <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-8">
